@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy birthday lil dino</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+    <script src="https://www.youtube.com/iframe_api"></script> <!-- Load YouTube IFrame Player API -->
+</head>
+<body>
+    <div id="container">
+        <div id="image-container"></div> <!-- Container for displaying images -->
+        <div id="text-container">
+            <div id="question"> HAPPY BIRTHDAY lil dino</div> <!-- Question -->
+            <div id="options">
+                <button id="yes-button" onclick="selectOption('yes')">Yes</button> <!-- Yes button -->
+                <button id="no-button" onclick="selectOption('no')">No</button> <!-- No button -->
+                <button id="play-music-button" onclick="playMusic()">Play Music</button> <!-- Button to play music -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add a div to hold the YouTube player -->
+    <div id="player" style="display: none;"></div>
+
+    <!-- Adding the bouquet section -->
+    <div class="bouquet-section">
+        <img src="flowers.png" alt="Bouquet of Flowers">
+        <p>My girl deserves all the lilies in the world.</p>
+    </div>
+
+    <script src="style.js"></script> <!-- Link to external JavaScript file -->
+    <script>
+        var player;
+
+        // Function to initialize the YouTube player
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                videoId: 'Cj0Tzu7duAE',
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        // Function to prepare the player when ready
+        function onPlayerReady(event) {
+            // Do nothing here, we will use a button to play the video
+        }
+
+        // Function to play the music
+        function playMusic() {
+            if (player && player.playVideo) {
+                player.playVideo();
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
